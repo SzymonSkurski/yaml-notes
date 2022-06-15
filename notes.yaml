@@ -1,0 +1,81 @@
+# comment
+# after hash sign can write whatever, line is ignored by interpreter
+#
+# basic key value pair; use : (colon) to separate key from value
+# all values in key value pairs are strings (no need to close with qutoes "")
+name: james
+#
+# use three dashes (---) as components separator
+---
+# this is new component
+# objects, use indents (4 spaces) to create object
+# !important indents always have to have 4 spaces
+person:
+  name: james
+  surname: bond
+  id: 007
+---
+# array / lists
+# create arrays by indented dashes or use brackets [] like in JSON format
+person:
+  name: james
+  surname: bond
+  id: 007
+  cars: 
+   - sunbeam:
+      engine:
+        model: r4
+        capacity: "1.6"
+        HP: 80
+   - bentley:
+       engine:
+        model: r6
+        capacity: "3.7"
+        HP: 110
+        extras: [mobile-phone, radio] #JSON like array
+---
+# boolean
+# acceptable positive values: true, yes, on
+# acceptable negative values: false, no, off
+person:
+  name: james
+  surname: bond
+  id: 007
+  active: true #true | false
+  deconspired: no #yes | no
+  green-policy: off #on | off
+---
+# multiline strings
+# use pipe sign | to create multiline string value
+multiline-string: |
+    first line string is here
+    and second line
+    and so on
+---
+# one line string
+# use right arrow bracket > to create single line string, all line breaks will be ignored
+one-line-string: >
+    This is very long string, it has to be print in one line
+    but i want break it to fit on screen so i have to use 
+    right arrow bracket > 
+    to mark it as one liner
+---
+# environmental variables
+# use dollar $ sign to access environment variables
+person:
+  name: james
+  surname: bond
+  id: 007
+  password-secret: $SECRET_PASSWORD
+  response-secret: $SECRET_RESPONSE
+---
+# placeholders
+# similar to other template languages use double braces {{ }}
+person:
+  name: hans
+  surname: kloss
+  id: j23
+  password: najlepsze kasztany sa na placu pigal
+  respone: {{ .current-person.respone }}
+
+
